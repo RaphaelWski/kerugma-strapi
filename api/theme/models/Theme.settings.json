@@ -1,0 +1,37 @@
+{
+  "connection": "default",
+  "collectionName": "themes",
+  "info": {
+    "name": "theme",
+    "description": "Le thème du message"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "default": "",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "text",
+      "default": "Description du thème"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "messages": {
+      "collection": "message",
+      "via": "theme"
+    }
+  }
+}

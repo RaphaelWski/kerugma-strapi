@@ -1,0 +1,50 @@
+{
+  "connection": "default",
+  "collectionName": "orateurs",
+  "info": {
+    "name": "orateur",
+    "description": "La personne apportant le message"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "nom": {
+      "type": "string",
+      "default": "",
+      "required": true
+    },
+    "prenom": {
+      "type": "string",
+      "required": true,
+      "default": ""
+    },
+    "date_naissance": {
+      "type": "date"
+    },
+    "mail": {
+      "type": "email"
+    },
+    "telephone": {
+      "type": "biginteger"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "presentation": {
+      "type": "richtext",
+      "default": "Présentation de l'orateur"
+    },
+    "messages": {
+      "collection": "message",
+      "via": "orateur"
+    }
+  }
+}

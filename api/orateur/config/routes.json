@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/orateurs",
+      "handler": "Orateur.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/orateurs/count",
+      "handler": "Orateur.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/orateurs/:id",
+      "handler": "Orateur.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/orateurs",
+      "handler": "Orateur.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/orateurs/:id",
+      "handler": "Orateur.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/orateurs/:id",
+      "handler": "Orateur.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

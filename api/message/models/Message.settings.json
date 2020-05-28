@@ -1,0 +1,48 @@
+{
+  "connection": "default",
+  "collectionName": "messages",
+  "info": {
+    "name": "message",
+    "description": "Enseignements bibliques de l'équipe pastorale et des invités reçus à l'église d'Orléans"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": [
+      "created_at",
+      "updated_at"
+    ],
+    "comment": ""
+  },
+  "attributes": {
+    "titre": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "default": ""
+    },
+    "description": {
+      "type": "text",
+      "default": "Description du message"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "theme": {
+      "model": "theme",
+      "via": "messages"
+    },
+    "orateur": {
+      "model": "orateur",
+      "via": "messages"
+    },
+    "audio": {
+      "type": "string"
+    }
+  }
+}
